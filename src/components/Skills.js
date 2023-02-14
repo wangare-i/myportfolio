@@ -1,9 +1,9 @@
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter1.svg";
-import meter3 from "../assets/img/meter1.svg";
+import meter1 from "../assets/img/polygon.gif";
+import meter2 from "../assets/img/polygon.gif";
+import meter3 from "../assets/img/polygon.gif";
 import colorSharp from "../assets/img/color-sharp.png";
 export const Skills=() =>{
     const responsive = {
@@ -35,7 +35,7 @@ export const Skills=() =>{
                  
                     <div className="skill-bx">
                         <h2> Skills</h2>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                        <Carousel responsive={responsive} infinite={true} className=" skill">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
                                 <h5>Web Development</h5>

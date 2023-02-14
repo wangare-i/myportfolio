@@ -5,6 +5,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 
 
 export const Banner=() => {
+  
     return(
         <section className="banner" id="home">
             <Container>
@@ -13,11 +14,12 @@ export const Banner=() => {
                         <span className="tagline">Welcome To My Portfolio</span>
                         <h5>{'Hi i am Josephine, '}<span className="wrap"> a web developer</span>
                         </h5>
-                        <p>I am a graduate of Bachelor's degree information technology.Specialized in netwoking,cybersecurity-CISCO certified and software development skilled in PHP and React</p>
+                        <p>A graduate in Computing,information technology and Information systems.Specialized in netwoking,cybersecurity-CISCO certified and software development skilled in PHP and React</p>
                         <button onClick={() => console.log('connect')}>Let’s connect<ArrowRightCircle size={25} /></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Img"></img>
+                        <img src={headerImg} alt="Header Img" 
+                         ></img>
                     </Col>
 
                 </Row>

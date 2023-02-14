@@ -1,35 +1,48 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
+import twitter from "../assets/img/twitter.png";
 import navIcon3 from '../assets/img/nav-icon3.svg';
-
-
+import { HashLink } from 'react-router-hash-link';
+import Logo from "../assets/img/developer.png";
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
 
 export const NavBar = () => {
-    const [activeLink, SetActiveLink]= useState('home');
-    const [scrolled, SetScrolled]= useState(false);
 
-    useEffect(()=> {
-        const onscroll =() => {
-            if (window.scrollY > 50){
-                SetScrolled(true);
-            }else{
-                SetScrolled(false);
-            }
-        }
-        window.addEventListener("scroll",onscroll);
-        return() => window.removeEventListener("scroll", onscroll);
-    },[])
-    const onUpdateActiveLink = (value )=>{
-        SetActiveLink(value);
-    } 
+  const [activeLink, setActiveLink] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
+
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  }
+
+
+
+
 
     return(
+      <Router>
         <Navbar bg="" expand="lg" className={scrolled ? "scrolled": ""}>
       <Container>
         <Navbar.Brand href="/">
-         <em><b> Josephine.</b></em>
+       
+        <img src={Logo} alt="Logo"></img><em><b> Josephine.</b></em>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -43,20 +56,21 @@ export const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt=""/></a>
-                <a href="#"><img src={navIcon2} alt=""/></a> 
-                <a href="#"><img src={navIcon3} alt=""/></a>
+                <a href="https://www.linkedin.com/in/wangare-irungu-2059741b4"><img src={navIcon1} alt=""/></a>
+                <a href="https://twitter.com/jossie_wangare?t=hOuUB0p4eRL2DoXQ7tEDUQ&s=03"><img src={twitter} alt=""/></a> 
+                <a href="https://instagram.com/wangare_irungu_?igshid=ZDdkNTZiNTM= "><img src={navIcon3} alt=""/></a>
 
             </div>
            
+            <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
-             
+              </HashLink>
           </span>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </Router>
    
 
-
     )
-}
+};
